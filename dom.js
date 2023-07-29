@@ -17,7 +17,6 @@ function enter(){
     if (Object.keys(account_found).length > 0) {
       document.getElementById ("login").hidden = true;
       document.getElementById ("info").hidden = false;
-
       document.getElementById ("balance").innerHTML = "your balance is :" + account_found.balance.toString();
       
     } else {  
@@ -29,7 +28,15 @@ function withdrawal(){
     if (Object.keys(account_found).length > 0) {
         var amount = document.getElementById ("withdrawal").value;
         amount = Number(amount);
+        if (amount < 0){ 
+          alert ("this tranaction is invalid");
+        }else{
+        var account_temporal = account_found.balance - amount;
+    if (account_temporal < 11){  
+      alert ("you do not have sufficient fund")
+    } else { 
         account_found.balance = account_found.balance - amount;
+    }}
 
       document.getElementById ("balance").innerHTML = "your balance is :" + account_found.balance.toString();
     
@@ -42,8 +49,11 @@ function deposit(){
   if (Object.keys(account_found).length > 0) {
       var amount = document.getElementById ("deposit").value;
       amount = Number(amount);
+      if (amount < 0){ 
+        alert ("this tranaction is invalid");
+      }else{
       account_found.balance = account_found.balance + amount;
-
+      }
     document.getElementById ("balance").innerHTML = "your balance is :" + account_found.balance.toString();
   
   } else {  
