@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="atm.css">
+    <title>atm</title>
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <div id = "login">
+        <main class="form-signin w-100 m-auto">
+        <form>
+        <div class="form-floating">
+            <label for="username">username:</label>
+            <input class="form-control" type="email" placeholder="write you name" id="username" name="username">
+        </div>
+    
+        <div class="form-floating">
+            <label for="password">Contraseña</label>
+            <input class="form-control" type="password" placeholder="write your password" id="password" name="password">
+        </div>
+    
+        <button onclick="enter()">enter</button>
+        <div>
+            <p>Are you not registered? <a href="createaccount">create an account</a></p> 
+        </div>
+        </form>
+        </main>
+    </div>
+    
+    <div id = "info" hidden>
+        <h1 id = "balance" ></h1>
+        <div>
+            <label for="withdrawal">withdrawal</label>
+            <input type="email" placeholder="write your amount" id="withdrawal" name="withdrawal">
+            <button onclick="withdrawal()">withdrawal</button>
+        </div>
+        <div>
+            <label for="deposit">deposit</label>
+            <input type="email" placeholder="write your amount" id="deposit" name="deposit">
+            <button onclick="deposit()">deposit</button>
+        </div>
+    </div>
+    <p id="message"></p>
+    
+    <script src="/dom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
